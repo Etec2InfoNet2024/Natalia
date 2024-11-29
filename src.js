@@ -24,13 +24,10 @@ import data from './quotes.json' with {type: 'json'}
 // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
 let id = 0 
-id = Math.floor(Math.random() * data.length)
-console.log(data[id])
-
 
 let content = document.querySelector('#content')
-content.textContent = "oiiiii"
-console.log(content.textContent)
+// content.textContent = "oiiiii"
+// console.log(content.textContent)
 // selecionar nó do html relacionado a mensagem  
 // https://developer.mozilla.org/pt-BR/docs/Web/API/Document/querySelector
 
@@ -39,7 +36,9 @@ console.log(content.textContent)
 // https://developer.mozilla.org/pt-BR/docs/Web/API/Document/getElementById
 // selecionar nó do html relacionado ao botão de compartilhar twitter
 
-
+let newQuoteButton = document.getElementById("newQuote")
+let shareTwitterButton = document.getElementById("shareTwitter")
+console.log(newQuoteButton)
 
 /* adicionar evento de click para quando usuário clicar no botão newQuote
    passos: 
@@ -50,10 +49,17 @@ console.log(content.textContent)
    https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
 */
 
+newQuoteButton.addEventListener("click", () => {
+   id = Math.floor(Math.random() * data.length)
+   console.log(data[id])
+   content.textContent = data[id]["quote"]
+})
+
 
 /* adicionar evento de click para quando usuário clicar no botão shareIt
    https://developer.x.com/en/docs/x-for-websites/tweet-button/overview
 */
+
 
 
 
